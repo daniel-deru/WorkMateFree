@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Runner</class>
+ <widget class="QWidget" name="Runner">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>612</width>
+    <height>531</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>WorkMate</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#Runner {
+	background-color: white;
+
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="runner_main_layout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="styleSheet">
+      <string notr="true">
+
+QTabBar::tab {
+	background-color: white;
+	font-size: 16px;
+	height: 30px;
+	width: 120px;
+	color: black;
+}
+
+QTabBar::tab:selected {
+	color: white;
+}
+
+QPushButton {
+	color: white;
+	border: 2px solid white;
+	background-color: transparent;
+	padding: 5px;
+	font-size: 16px;
+	border-radius: 10px;
+}
+
+QPushButton:pressed {
+	background-color: white;
+}
+
+
+
+
+</string>
+     </property>
+     <property name="currentIndex">
+      <number>2</number>
+     </property>
+     <widget class="QWidget" name="apps_tab">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <attribute name="icon">
+       <iconset>
+        <normaloff>../images/AppsIcon.png</normaloff>../images/AppsIcon.png</iconset>
+      </attribute>
+      <attribute name="title">
+       <string>Apps</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>9</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <layout class="QGridLayout" name="gbox_apps_btn_container">
+         <property name="leftMargin">
+          <number>15</number>
+         </property>
+         <property name="rightMargin">
+          <number>15</number>
+         </property>
+         <item row="0" column="1">
+          <widget class="QPushButton" name="main_add_category_btn">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+	color: white;
+	border: 2px solid white;
+	background-color: transparent;
+	padding: 5px;
+	font-size: 16px;
+	border-radius: 10px;
+	min-width: 120px;
+}
+
+QPushButton:pressed {
+	background-color: white;
+}</string>
+           </property>
+           <property name="text">
+            <string>Add Category</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QPushButton" name="apps_btn_delete">
+           <property name="styleSheet">
+            <string notr="true">min-width: 120px;</string>
+           </property>
+           <property name="text">
+            <string>Delete Category</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QPushButton" name="apps_btn_edit">
+           <property name="styleSheet">
+            <string notr="true">min-width: 120px;</string>
+           </property>
+           <property name="text">
+            <string>Edit Category</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <widget class="QPushButton" name="btn_run">
+           <property name="styleSheet">
+            <string notr="true">#btn_run {
+	background-color: white;
+	border: 2px solid white;
+	min-width: 120px;
+}
+
+#btn_run:pressed {
+	background-color: transparent;
+	color: white;
+}</string>
+           </property>
+           <property name="text">
+            <string>Run Active</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="0" column="5">
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="apps_container_vlayout">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetMinimumSize</enum>
+         </property>
+         <item>
+          <widget class="QScrollArea" name="apps_scroll_area">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="apps_scroll_area_widget">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>100</width>
+              <height>30</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_3"/>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="notes_tab">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <attribute name="icon">
+       <iconset>
+        <normaloff>../images/NotesIcon.png</normaloff>../images/NotesIcon.png</iconset>
+      </attribute>
+      <attribute name="title">
+       <string>Notes</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="notes_tab_layout">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" name="add_note_layout">
+         <property name="leftMargin">
+          <number>15</number>
+         </property>
+         <property name="rightMargin">
+          <number>15</number>
+         </property>
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="main_add_notes_btn">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+	color: white;
+	border: 2px solid white;
+	background-color: transparent;
+	padding: 5px;
+	font-size: 16px;
+	border-radius: 10px;
+	min-width: 170px;
+}
+
+QPushButton:pressed {
+	background-color: white;
+}</string>
+           </property>
+           <property name="text">
+            <string>Add Notes</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_notes_edit">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+	color: white;
+	border: 2px solid white;
+	background-color: transparent;
+	padding: 5px;
+	font-size: 16px;
+	border-radius: 10px;
+	min-width: 170px;
+}
+
+QPushButton:pressed {
+	background-color: white;
+}</string>
+           </property>
+           <property name="text">
+            <string>Edit Notes</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_notes_delete">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+	color: white;
+	border: 2px solid white;
+	background-color: transparent;
+	padding: 5px;
+	font-size: 16px;
+	border-radius: 10px;
+	min-width: 170px;
+}
+
+QPushButton:pressed {
+	background-color: white;
+}</string>
+           </property>
+           <property name="text">
+            <string>Delete Note</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="notes_scroll_outer_layout">
+         <item>
+          <widget class="QScrollArea" name="notes_scroll_area">
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="notes_scroll_area_widget">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>100</width>
+              <height>30</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <layout class="QVBoxLayout" name="notes_scroll_layout"/>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="settings_tab">
+      <property name="styleSheet">
+       <string notr="true">color: white;
+font-size: 16px;</string>
+      </property>
+      <attribute name="icon">
+       <iconset>
+        <normaloff>../images/SettingsIcon.png</normaloff>../images/SettingsIcon.png</iconset>
+      </attribute>
+      <attribute name="title">
+       <string>Settings</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>15</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" name="hbox_color">
+         <item>
+          <widget class="QLabel" name="lbl_main_color">
+           <property name="text">
+            <string>Main Color:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lbl_hex_color">
+           <property name="text">
+            <string>#007EA6</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_choose_color">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Choose Color</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="line1">
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="hbox_font">
+         <item>
+          <widget class="QLabel" name="lbl_font">
+           <property name="text">
+            <string>Font:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lbl_font_example">
+           <property name="text">
+            <string>This Is Your Font</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cmb_font">
+           <property name="styleSheet">
+            <string notr="true">QComboBox {
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5;
+  
+}
+
+QComboBox QAbstractItemView {
+    border: 2px solid white;
+	border-radius: 5px;
+	background-color: white;
+	color: black;
+	selection-color: white;
+	outline: none;
+}</string>
+           </property>
+           <property name="frame">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_order" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="Line" name="line2">
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lbl_order">
+            <property name="text">
+             <string>Order Notes By</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="hbox_order">
+            <item>
+             <widget class="QRadioButton" name="rbtn_date">
+              <property name="text">
+               <string>Date</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rbtn_title">
+              <property name="text">
+               <string>Title</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rbtn_priority">
+              <property name="text">
+               <string>Priority</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="vspcr_main">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="hbox_save">
+         <item>
+          <spacer name="hspcr_left">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_reset">
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton:pressed {
+	background-color: white;
+
+}</string>
+           </property>
+           <property name="text">
+            <string>Reset</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_save">
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton:pressed {
+	background-color: white;
+}</string>
+           </property>
+           <property name="text">
+            <string>Save</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="hspcr_right">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
